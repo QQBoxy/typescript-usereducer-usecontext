@@ -13,7 +13,10 @@ export const initListState: IListState = {
   list: [],
 };
 
-const listReducer = (state = initListState, action: TRootActions): IListState => {
+const listReducer = (
+  state: IListState = initListState,
+  action: TRootActions,
+): IListState => {
   switch (action.type) {
     case Types.Add:
       return {

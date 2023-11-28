@@ -1,9 +1,11 @@
+import { Types } from '../reducers/list';
+
 export type listActions = {
   addList: (payload: string) => {
-    type: 'ADD_LIST';
+    type: Types.Add;
     payload: string;
   };
-  resetList: () => { type: 'RESET_LIST' };
+  resetList: () => { type: Types.Reset };
 };
 
 export default listActions;

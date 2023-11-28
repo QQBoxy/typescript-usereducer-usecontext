@@ -13,7 +13,10 @@ export const initCountState: ICountState = {
   count: 0,
 };
 
-const countReducer = (state: ICountState, action: TRootActions): ICountState => {
+const countReducer = (
+  state: ICountState = initCountState,
+  action: TRootActions,
+): ICountState => {
   switch (action.type) {
     case Types.Add:
       return {

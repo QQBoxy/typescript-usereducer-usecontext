@@ -1,24 +1,15 @@
-import countActions from '../actions/count';
-import listActions from '../actions/list';
-import initCountState from '../reducers/count';
-import initListState from '../reducers/list';
+import type { Reducer } from 'react';
 
-export const rootState = {
-  list: initListState,
-  count: initCountState,
-};
+import type { rootActions, rootState } from '../index';
 
-export type TRootState = typeof rootState;
-
-export type rootActions = {
-  list: listActions;
-  count: countActions;
-};
-
-export type ActionsMap<A> = {
+type ActionsMap<A> = {
   [K in keyof A]: A[K] extends Record<keyof A[K], (...arg: never[]) => infer R>
     ? R
     : never;
 }[keyof A];
 
+export type TRootState = typeof rootState;
+
 export type TRootActions = ActionsMap<rootActions>;
+
+// export type TRootReducer<S = TRootState, A = TRootActions> = Reducer<S, A>;

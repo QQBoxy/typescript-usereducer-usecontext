@@ -1,10 +1,10 @@
 import { createContext, Dispatch, useMemo, useReducer } from 'react';
 
 // import useReducerLogger from '~/hooks/useReducerLogger';
-import { rootReducer } from './index';
-import { rootState, TRootActions, TRootState } from './typings/reducers';
+import { rootReducer, rootState } from './index';
+import { TRootActions, TRootState } from './typings/reducers';
 
-export const ReduxStore = createContext<{
+export const Store = createContext<{
   state: TRootState;
   dispatch: Dispatch<TRootActions>;
 }>({
@@ -24,7 +24,7 @@ const StoreProvider = ({ children }: { children: JSX.Element }) => {
 
   const store = useMemo(() => ({ state, dispatch }), [state]);
 
-  return <ReduxStore.Provider value={store}>{children}</ReduxStore.Provider>;
+  return <Store.Provider value={store}>{children}</Store.Provider>;
 };
 
 export default StoreProvider;

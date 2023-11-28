@@ -1,7 +1,9 @@
 import { Reducer } from 'react';
 
-import countReducer from './reducers/count';
-import listReducer from './reducers/list';
+import countActions from './actions/count';
+import listActions from './actions/list';
+import countReducer, { initCountState } from './reducers/count';
+import listReducer, { initListState } from './reducers/list';
 import { TRootActions, TRootState } from './typings/reducers';
 
 const combineReducers = <S = TRootState>(reducers: {
@@ -17,6 +19,16 @@ const combineReducers = <S = TRootState>(reducers: {
       state,
     );
   };
+};
+
+export const rootState = {
+  list: initListState,
+  count: initCountState,
+};
+
+export type rootActions = {
+  list: listActions;
+  count: countActions;
 };
 
 export const rootReducer = combineReducers({

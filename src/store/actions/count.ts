@@ -1,9 +1,11 @@
+import { Types } from '../reducers/count';
+
 export type countActions = {
   addCount: (payload: number) => {
-    type: 'ADD_COUNT';
+    type: Types.Add;
     payload: number;
   };
-  resetCount: () => { type: 'RESET_COUNT' };
+  resetCount: () => { type: Types.Reset };
 };
 
 export default countActions;
