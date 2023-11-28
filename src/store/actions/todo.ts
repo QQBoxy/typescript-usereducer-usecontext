@@ -1,6 +1,6 @@
-import { Types } from '../reducers/list';
+import { Types } from '../reducers/todo';
 
-export type listActions = {
+export type todoActions = {
   addList: (payload: string) => {
     type: Types.Add;
     payload: string;
@@ -8,4 +8,4 @@ export type listActions = {
   resetList: () => { type: Types.Reset };
 };
 
-export default listActions;
+export default todoActions;

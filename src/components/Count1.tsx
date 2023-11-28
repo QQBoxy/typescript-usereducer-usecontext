@@ -1,12 +1,12 @@
 import React from 'react';
 
 import { Store } from '../store/configureStore';
-import { Types } from '../store/reducers/count';
+import { Types } from '../store/reducers/counter';
 
 function Count1() {
   const { state, dispatch } = React.useContext(Store);
   return (
-    <div className="Count1">
+    <div>
       <button
         onClick={() => {
           dispatch({
@@ -15,9 +15,9 @@ function Count1() {
           });
         }}
       >
-        Click count 1
+        Click count +1
       </button>
-      {state.count.count}
+      {state.counter.count}
     </div>
   );
 }

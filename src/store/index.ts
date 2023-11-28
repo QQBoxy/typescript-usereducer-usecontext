@@ -1,9 +1,9 @@
 import { Reducer } from 'react';
 
-import countActions from './actions/count';
-import listActions from './actions/list';
-import countReducer, { initCountState } from './reducers/count';
-import listReducer, { initListState } from './reducers/list';
+import counterActions from './actions/counter';
+import todoActions from './actions/todo';
+import counterReducer, { initCounterState } from './reducers/counter';
+import todoReducer, { initTodoState } from './reducers/todo';
 import { TRootActions, TRootState } from './typings/reducers';
 
 const combineReducers = <S = TRootState>(reducers: {
@@ -22,18 +22,18 @@ const combineReducers = <S = TRootState>(reducers: {
 };
 
 export const rootState = {
-  list: initListState,
-  count: initCountState,
+  todo: initTodoState,
+  counter: initCounterState,
 };
 
 export type rootActions = {
-  list: listActions;
-  count: countActions;
+  todo: todoActions;
+  counter: counterActions;
 };
 
 export const rootReducer = combineReducers({
-  list: listReducer,
-  count: countReducer,
+  todo: todoReducer,
+  counter: counterReducer,
 });
 
 export type TRootReducer<S = TRootState, A = TRootActions> = Reducer<S, A>;

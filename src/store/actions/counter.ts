@@ -1,6 +1,6 @@
-import { Types } from '../reducers/count';
+import { Types } from '../reducers/counter';
 
-export type countActions = {
+export type counterActions = {
   addCount: (payload: number) => {
     type: Types.Add;
     payload: number;
@@ -8,4 +8,4 @@ export type countActions = {
   resetCount: () => { type: Types.Reset };
 };
 
-export default countActions;
+export default counterActions;

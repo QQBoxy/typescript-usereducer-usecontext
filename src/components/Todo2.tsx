@@ -1,9 +1,9 @@
 import React from 'react';
 
 import { Store } from '../store/configureStore';
-import { Types } from '../store/reducers/counter';
+import { Types } from '../store/reducers/todo';
 
-function Count2() {
+function Todo2() {
   const { state, dispatch } = React.useContext(Store);
   return (
     <div>
@@ -11,15 +11,15 @@ function Count2() {
         onClick={() => {
           dispatch({
             type: Types.Add,
-            payload: 2,
+            payload: 'Hi',
           });
         }}
       >
-        Click count +2
+        Add Hi
       </button>
-      {state.counter.count}
+      {state.todo.list.join(', ')}
     </div>
   );
 }
 
-export default Count2;
+export default Todo2;

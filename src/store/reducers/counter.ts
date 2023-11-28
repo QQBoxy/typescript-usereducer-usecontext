@@ -5,18 +5,18 @@ export enum Types {
   Reset = 'RESET_COUNT',
 }
 
-export interface ICountState {
+export interface ICounterState {
   count: number;
 }
 
-export const initCountState: ICountState = {
+export const initCounterState: ICounterState = {
   count: 0,
 };
 
-const countReducer = (
-  state: ICountState = initCountState,
+const counterReducer = (
+  state: ICounterState = initCounterState,
   action: TRootActions,
-): ICountState => {
+): ICounterState => {
   switch (action.type) {
     case Types.Add:
       return {
@@ -25,11 +25,11 @@ const countReducer = (
       };
 
     case Types.Reset:
-      return initCountState;
+      return initCounterState;
 
     default:
       return state;
   }
 };
 
-export default countReducer;
+export default counterReducer;

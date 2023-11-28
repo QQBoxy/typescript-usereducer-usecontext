@@ -12,4 +12,4 @@ export type TRootState = typeof rootState;
 
 export type TRootActions = ActionsMap<rootActions>;
 
-// export type TRootReducer<S = TRootState, A = TRootActions> = Reducer<S, A>;
+export type TRootReducer<S = TRootState, A = TRootActions> = Reducer<S, A>;

@@ -5,18 +5,18 @@ export enum Types {
   Reset = 'RESET_LIST',
 }
 
-export interface IListState {
+export interface ITodoState {
   list: string[];
 }
 
-export const initListState: IListState = {
+export const initTodoState: ITodoState = {
   list: [],
 };
 
-const listReducer = (
-  state: IListState = initListState,
+const todoReducer = (
+  state: ITodoState = initTodoState,
   action: TRootActions,
-): IListState => {
+): ITodoState => {
   switch (action.type) {
     case Types.Add:
       return {
@@ -25,11 +25,11 @@ const listReducer = (
       };
 
     case Types.Reset:
-      return initListState;
+      return initTodoState;
 
     default:
       return state;
   }
 };
 
-export default listReducer;
+export default todoReducer;
