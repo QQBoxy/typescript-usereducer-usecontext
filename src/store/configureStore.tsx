@@ -1,6 +1,6 @@
 import { createContext, Dispatch, useMemo, useReducer } from 'react';
 
-// import useReducerLogger from '~/hooks/useReducerLogger';
+import useReducerLogger from '../hooks/useReducerLogger';
 import { rootReducer, rootState } from './index';
 import { TRootActions, TRootState } from './typings/reducers';
 
@@ -13,14 +13,12 @@ export const Store = createContext<{
 });
 
 const StoreProvider = ({ children }: { children: JSX.Element }) => {
-  //   const loggedReducer = useReducerLogger(rootReducer);
+  const loggedReducer = useReducerLogger(rootReducer);
 
-  const [state, dispatch] = useReducer(rootReducer, rootState);
-
-  //   const [state, dispatch] = useReducer(
-  //     process.env.NODE_ENV === 'development' ? loggedReducer : rootReducer,
-  //     rootState,
-  //   );
+  const [state, dispatch] = useReducer(
+    import.meta.env.DEV ? loggedReducer : rootReducer,
+    rootState,
+  );
 
   const store = useMemo(() => ({ state, dispatch }), [state]);
 

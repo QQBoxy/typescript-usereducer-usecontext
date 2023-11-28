@@ -3,7 +3,7 @@ import React from 'react';
 import { Store } from '../store/configureStore';
 import { Types } from '../store/reducers/counter';
 
-function Count2() {
+function Counter2() {
   const { state, dispatch } = React.useContext(Store);
   return (
     <div>
@@ -22,4 +22,4 @@ function Count2() {
   );
 }
 
-export default Count2;
+export default Counter2;
