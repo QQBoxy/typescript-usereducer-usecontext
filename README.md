@@ -28,6 +28,6 @@ After the successful installation of the packages: `yarn dev`
 
 If Everything is Good Then It Should Work, but let me new if something else happens
 
-Made with ❤️ by theSwordBreaker(we Destory all types of sword ⚡)
+Made with ❤️ by [theSwordBreaker](https://github.com/TheSwordBreaker/vite-reactts-eslint-prettier) (we Destory all types of sword ⚡)
 
 In addition, useReducer and useContext examples are added by QQBoxy.
